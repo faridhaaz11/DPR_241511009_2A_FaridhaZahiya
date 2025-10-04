@@ -182,4 +182,45 @@ class Anggota extends Controller
         return view('anggota/lihat_komponen_gaji', $data);
     }
 
+    public function editKomponenGaji($id)
+    {
+        $data['komponen'] = $this->komponenGajiModel->find($id);
+        if (empty($data['komponen'])) {
+            return redirect()->to('/anggota/lihatKomponenGaji')->with('error', 'Komponen gaji tidak ditemukan');
+        }
+        return view('anggota/edit_komponen_gaji', $data);
+    }
+
+    public function updateKomponenGaji($id)
+    {
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'nama_komponen' => 'required|max_length[100]',
+            'kategori' => 'required|max_length[50]',
+            'jabatan' => 'required|in_list[Ketua,Wakil Ketua,Anggota,Semua]',
+            'nominal' => 'required|decimal|greater_than[0]',
+            'satuan' => 'required|max_length[20]',
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+        }
+
+        $data = [
+            'nama_komponen' => $this->request->getPost('nama_komponen'),
+            'kategori' => $this->request->getPost('kategori'),
+            'jabatan' => $this->request->getPost('jabatan'),
+            'nominal' => $this->request->getPost('nominal'),
+            'satuan' => $this->request->getPost('satuan'),
+        ];
+
+        try {
+            $this->komponenGajiModel->update($id, $data);
+            return redirect()->to('/anggota/lihatKomponenGaji')->with('success', 'Komponen gaji berhasil diperbarui');
+        } catch (\Exception $e) {
+            log_message('error', 'Gagal memperbarui komponen gaji: ' . $e->getMessage());
+            return redirect()->back()->withInput()->with('errors', ['system' => 'Terjadi kesalahan saat memperbarui data. Cek log untuk detail.']);
+        }
+    }
+
 }

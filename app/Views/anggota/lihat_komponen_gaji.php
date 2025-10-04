@@ -19,12 +19,13 @@
                     <th>Jabatan</th>
                     <th>Nominal</th>
                     <th>Satuan</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 <?php if (empty($komponen)): ?>
                     <tr>
-                        <td colspan="6" class="text-center">Tidak ada data komponen gaji.</td>
+                        <td colspan="7" class="text-center">Tidak ada data komponen gaji.</td>
                     </tr>
                 <?php else: ?>
                     <?php foreach ($komponen as $k): ?>
@@ -35,6 +36,9 @@
                             <td><?= $k['jabatan'] ?></td>
                             <td><?= number_format($k['nominal'], 2) ?></td>
                             <td><?= $k['satuan'] ?></td>
+                            <td>
+                                <a href="/anggota/editKomponenGaji/<?= $k['id_komponen_gaji'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>
