@@ -6,6 +6,9 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
+$routes->get('admin/dashboard', 'Admin\Dashboard::index');
+$routes->get('public/dashboard', 'Public\Dashboard::index');
+
 $routes->get('/', 'Auth::login');
 $routes->get('/login', 'Auth::login');
 $routes->post('/auth/attemptLogin', 'Auth::attemptLogin');
@@ -35,3 +38,4 @@ $routes->get('public/penggajian', 'PublicController::lihatPenggajianPublic');
 $routes->get('anggota/editPenggajian/(:num)/(:num)', 'Anggota::editPenggajian/$1/$2');
 $routes->post('anggota/updatePenggajian/(:num)/(:num)', 'Anggota::updatePenggajian/$1/$2');
 $routes->delete('anggota/deletePenggajian/(:num)/(:num)', 'Anggota::deletePenggajian/$1/$2');
+$routes->get('anggota/detailPenggajian/(:num)', 'Anggota::detailPenggajian/$1');

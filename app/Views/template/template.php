@@ -43,22 +43,33 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">APLIKASI TRANSPARANSI GAJI DPR</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <?php if (session()->get('logged_in')): ?>
-                        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-                    <?php else: ?>
-                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                    <?php endif; ?>
-                </ul>
-            </div>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">APLIKASI TRANSPARANSI GAJI DPR</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <?php if (session()->get('role') == 'Admin'): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/dashboard">Dashboard</a>
+                    </li>
+                <?php elseif (session()->get('role') == 'Public'): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/public/dashboard">Dashboard</a>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (session()->get('logged_in')): ?>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                <?php else: ?>
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                <?php endif; ?>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 sidebar">

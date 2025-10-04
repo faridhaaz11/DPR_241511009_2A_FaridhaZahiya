@@ -406,5 +406,39 @@ class Anggota extends Controller
         }
     }
 
+    public function detailPenggajian($idAnggota)
+    {
+        // Ambil data anggota
+        $anggota = $this->anggotaModel->find($idAnggota);
+        if (empty($anggota)) {
+            return redirect()->to('/anggota/lihatPenggajian')->with('error', 'Data anggota tidak ditemukan');
+        }
+
+        // Ambil daftar komponen gaji yang dimiliki anggota ini
+        $penggajian = $this->db->table('penggajian')
+            ->join('komponen_gaji', 'komponen_gaji.id_komponen_gaji = penggajian.id_komponen_gaji')
+            ->select('komponen_gaji.nama_komponen, komponen_gaji.kategori, komponen_gaji.nominal, komponen_gaji.satuan')
+            ->where('penggajian.id_anggota', $idAnggota)
+            ->get()
+            ->getResultArray();
+
+        // Hitung total take home pay
+        $total = $this->db->table('penggajian')
+            ->join('komponen_gaji', 'komponen_gaji.id_komponen_gaji = penggajian.id_komponen_gaji')
+            ->where('penggajian.id_anggota', $idAnggota)
+            ->selectSum('komponen_gaji.nominal')
+            ->get()
+            ->getRow()
+            ->nominal ?? 0;
+
+        $data = [
+            'anggota' => $anggota,
+            'penggajian' => $penggajian,
+            'total' => $total,
+        ];
+
+        return view('anggota/detail_penggajian', $data);
+    }
+
 
 }

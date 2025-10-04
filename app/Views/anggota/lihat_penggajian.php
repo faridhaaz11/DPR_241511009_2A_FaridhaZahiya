@@ -45,6 +45,7 @@
                                     <input type="hidden" name="_method" value="DELETE">
                                     <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                                 </form>
+                                <a href="/anggota/detailPenggajian/<?= $p['id_anggota'] ?>" class="btn btn-info btn-sm">Detail</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
