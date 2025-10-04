@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\AnggotaModel;
 use App\Models\KomponenGajiModel;
 use App\Models\GajiAnggotaModel;
+use App\Models\PenggajianModel;
 use CodeIgniter\Controller;
 
 class Anggota extends Controller
@@ -12,12 +13,14 @@ class Anggota extends Controller
     protected $anggotaModel;
     protected $komponenGajiModel;
     protected $gajiAnggotaModel;
+    protected $penggajianModel;
 
     public function __construct()
     {
         $this->anggotaModel = new AnggotaModel();
         $this->komponenGajiModel = new KomponenGajiModel();
         $this->gajiAnggotaModel = new GajiAnggotaModel();
+        $this->penggajianModel = new PenggajianModel();
         helper(['form', 'url']);
 
         if (!$this->checkAuth()) {
@@ -231,6 +234,58 @@ class Anggota extends Controller
         } catch (\Exception $e) {
             log_message('error', 'Gagal menghapus komponen gaji: ' . $e->getMessage());
             return redirect()->to('/anggota/lihatKomponenGaji')->with('error', 'Terjadi kesalahan saat menghapus data. Cek log untuk detail.');
+        }
+    }
+
+    public function tambahPenggajian()
+    {
+        $data['anggota'] = $this->anggotaModel->findAll();
+        $data['komponen'] = $this->komponenGajiModel->findAll();
+        return view('anggota/tambah_penggajian', $data);
+    }
+
+    public function savePenggajian()
+    {
+        $validation = \Config\Services::validation();
+        $idAnggota = $this->request->getPost('id_anggota');
+        $idKomponenGaji = $this->request->getPost('id_komponen_gaji');
+
+        // Ambil jabatan anggota
+        $anggota = $this->anggotaModel->find($idAnggota);
+        if (empty($anggota)) {
+            return redirect()->back()->withInput()->with('errors', ['id_anggota' => 'Anggota tidak ditemukan']);
+        }
+        $jabatanAnggota = $anggota['jabatan'];
+
+        // Validasi komponen sesuai jabatan
+        $komponen = $this->komponenGajiModel->find($idKomponenGaji);
+        if (empty($komponen)) {
+            return redirect()->back()->withInput()->with('errors', ['id_komponen_gaji' => 'Komponen gaji tidak ditemukan']);
+        }
+        $jabatanKomponen = $komponen['jabatan'];
+        if ($jabatanKomponen !== 'Semua' && $jabatanKomponen !== $jabatanAnggota) {
+            return redirect()->back()->withInput()->with('errors', ['id_komponen_gaji' => 'Komponen gaji tidak sesuai dengan jabatan anggota']);
+        }
+
+        // Validasi tidak boleh duplikat
+        $existing = $this->penggajianModel->where('id_anggota', $idAnggota)
+                                        ->where('id_komponen_gaji', $idKomponenGaji)
+                                        ->first();
+        if (!empty($existing)) {
+            return redirect()->back()->withInput()->with('errors', ['id_komponen_gaji' => 'Komponen gaji ini sudah ditambahkan untuk anggota ini']);
+        }
+
+        $data = [
+            'id_anggota' => $idAnggota,
+            'id_komponen_gaji' => $idKomponenGaji,
+        ];
+
+        try {
+            $this->penggajianModel->insert($data);
+            return redirect()->to('/anggota/lihatPenggajian')->with('success', 'Data penggajian berhasil ditambahkan');
+        } catch (\Exception $e) {
+            log_message('error', 'Gagal menyimpan data penggajian: ' . $e->getMessage());
+            return redirect()->back()->withInput()->with('errors', ['system' => 'Terjadi kesalahan saat menyimpan data. Cek log untuk detail.']);
         }
     }
 

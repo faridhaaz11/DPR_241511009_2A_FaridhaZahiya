@@ -25,3 +25,5 @@ $routes->get('anggota/lihatKomponenGaji', 'Anggota::lihatKomponenGaji');
 $routes->get('anggota/editKomponenGaji/(:num)', 'Anggota::editKomponenGaji/$1');
 $routes->post('anggota/updateKomponenGaji/(:num)', 'Anggota::updateKomponenGaji/$1');
 $routes->get('anggota/deleteKomponenGaji/(:num)', 'Anggota::deleteKomponenGaji/$1');
+$routes->get('anggota/tambahPenggajian', 'Anggota::tambahPenggajian');
+$routes->post('anggota/savePenggajian', 'Anggota::savePenggajian');

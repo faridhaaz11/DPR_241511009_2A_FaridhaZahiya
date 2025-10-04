@@ -65,7 +65,7 @@
                 <?php if (session()->get('role') == 'Admin'): ?>
                     <h5 class="fw-bold">Menu Admin</h5>
                     <a href="/anggota" class="btn" style="background-color: #003366; border-color: #003366;">Data Anggota DPR</a>
-                    <a href="/komponen" class="btn" style="background-color: #003366; border-color: #003366;">Data Komponen Gaji</a>
+                    <a href="/anggota/lihatKomponenGaji" class="btn" style="background-color: #003366; border-color: #003366;">Data Komponen Gaji</a>
                     <a href="/penggajian" class="btn" style="background-color: #003366; border-color: #003366;">Data Penggajian</a>
                 <?php elseif (session()->get('role') == 'Public'): ?>
                     <h5 class="fw-bold">Menu Public</h5>
