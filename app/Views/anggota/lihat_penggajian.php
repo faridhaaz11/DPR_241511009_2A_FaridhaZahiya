@@ -20,6 +20,7 @@
                     <th>Gelar Belakang</th>
                     <th>Jabatan</th>
                     <th>Take Home Pay (Rp)</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,9 @@
                             <td><?= $p['gelar_belakang'] ?? '-' ?></td>
                             <td><?= $p['jabatan'] ?></td>
                             <td><?= number_format($p['take_home_pay'], 2) ?></td>
+                            <td>
+                                <a href="/anggota/editPenggajian/<?= $p['id_anggota'] ?>/<?= $p['id_komponen_gaji'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>

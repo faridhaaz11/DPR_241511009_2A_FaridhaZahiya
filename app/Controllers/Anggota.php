@@ -297,24 +297,90 @@ class Anggota extends Controller
         $builder = $this->db->table('penggajian')
                             ->join('anggota', 'anggota.id_anggota = penggajian.id_anggota')
                             ->join('komponen_gaji', 'komponen_gaji.id_komponen_gaji = penggajian.id_komponen_gaji')
-                            ->select('penggajian.id_anggota, anggota.gelar_depan, anggota.nama_depan, anggota.nama_belakang, anggota.gelar_belakang, anggota.jabatan, komponen_gaji.nominal')
-                            ->groupBy('penggajian.id_anggota, anggota.gelar_depan, anggota.nama_depan, anggota.nama_belakang, anggota.gelar_belakang, anggota.jabatan');
+                            ->select('penggajian.id_anggota, penggajian.id_komponen_gaji, anggota.gelar_depan, anggota.nama_depan, anggota.nama_belakang, anggota.gelar_belakang, anggota.jabatan, komponen_gaji.nominal');
 
         $data['penggajian'] = $builder->get()->getResultArray();
 
-        // Hitung Take Home Pay sederhana (jumlah nominal komponen untuk setiap anggota)
-        foreach ($data['penggajian'] as &$row) {
+        // Kelompokkan dan hitung Take Home Pay per anggota
+        $groupedPenggajian = [];
+        foreach ($data['penggajian'] as $row) {
+            $idAnggota = $row['id_anggota'];
+            if (!isset($groupedPenggajian[$idAnggota])) {
+                $groupedPenggajian[$idAnggota] = $row;
+                $groupedPenggajian[$idAnggota]['take_home_pay'] = 0;
+            }
             $totalNominal = $this->db->table('penggajian')
                                 ->join('komponen_gaji', 'komponen_gaji.id_komponen_gaji = penggajian.id_komponen_gaji')
-                                ->where('penggajian.id_anggota', $row['id_anggota'])
+                                ->where('penggajian.id_anggota', $idAnggota)
                                 ->selectSum('komponen_gaji.nominal')
                                 ->get()
                                 ->getRow()
                                 ->nominal;
-            $row['take_home_pay'] = $totalNominal ?? 0;
+            $groupedPenggajian[$idAnggota]['take_home_pay'] = $totalNominal ?? 0;
         }
+        $data['penggajian'] = array_values($groupedPenggajian);
 
         return view('anggota/lihat_penggajian', $data);
+    }
+
+    public function editPenggajian($idAnggota, $idKomponenGaji)
+    {
+        $data['anggota'] = $this->anggotaModel->findAll();
+        $data['komponen'] = $this->komponenGajiModel->findAll();
+        $data['penggajian'] = $this->penggajianModel->where('id_anggota', $idAnggota)
+                                                ->where('id_komponen_gaji', $idKomponenGaji)
+                                                ->first();
+        if (empty($data['penggajian'])) {
+            return redirect()->to('/anggota/lihatPenggajian')->with('error', 'Data penggajian tidak ditemukan');
+        }
+        return view('anggota/edit_penggajian', $data);
+    }
+
+    public function updatePenggajian($idAnggota, $idKomponenGaji)
+    {
+        $validation = \Config\Services::validation();
+
+        // Ambil data anggota untuk validasi jabatan
+        $anggota = $this->anggotaModel->find($idAnggota);
+        if (empty($anggota)) {
+            return redirect()->back()->withInput()->with('errors', ['id_anggota' => 'Anggota tidak ditemukan']);
+        }
+        $jabatanAnggota = $anggota['jabatan'];
+
+        // Ambil data komponen yang akan diubah
+        $komponenBaru = $this->request->getPost('id_komponen_gaji');
+        $komponen = $this->komponenGajiModel->find($komponenBaru);
+        if (empty($komponen)) {
+            return redirect()->back()->withInput()->with('errors', ['id_komponen_gaji' => 'Komponen gaji tidak ditemukan']);
+        }
+        $jabatanKomponen = $komponen['jabatan'];
+        if ($jabatanKomponen !== 'Semua' && $jabatanKomponen !== $jabatanAnggota) {
+            return redirect()->back()->withInput()->with('errors', ['id_komponen_gaji' => 'Komponen gaji tidak sesuai dengan jabatan anggota']);
+        }
+
+        // Validasi tidak boleh duplikat (kecuali data asli)
+        $existing = $this->penggajianModel->where('id_anggota', $idAnggota)
+                                        ->where('id_komponen_gaji', $komponenBaru)
+                                        ->first();
+        if (!empty($existing) && ($existing['id_komponen_gaji'] != $idKomponenGaji || $existing['id_anggota'] != $idAnggota)) {
+            return redirect()->back()->withInput()->with('errors', ['id_komponen_gaji' => 'Komponen gaji ini sudah ditambahkan untuk anggota ini']);
+        }
+
+        $data = [
+            'id_anggota' => $idAnggota,
+            'id_komponen_gaji' => $komponenBaru,
+        ];
+
+        try {
+            $this->penggajianModel->where('id_anggota', $idAnggota)
+                                ->where('id_komponen_gaji', $idKomponenGaji)
+                                ->delete();
+            $this->penggajianModel->insert($data);
+            return redirect()->to('/anggota/lihatPenggajian')->with('success', 'Data penggajian berhasil diperbarui');
+        } catch (\Exception $e) {
+            log_message('error', 'Gagal memperbarui data penggajian: ' . $e->getMessage());
+            return redirect()->back()->withInput()->with('errors', ['system' => 'Terjadi kesalahan saat memperbarui data. Cek log untuk detail.']);
+        }
     }
 
 
