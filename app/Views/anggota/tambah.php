@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 <div class="card mt-4 mx-auto" style="max-width: 500px;">
     <div class="card-header">
-        <h4>Tambah Data Anggota DPR</h4>
+        <h4 class="fw-bold">Tambah Data Anggota DPR</h4>
     </div>
     <div class="card-body">
         <?php if (session()->getFlashdata('errors')): ?>

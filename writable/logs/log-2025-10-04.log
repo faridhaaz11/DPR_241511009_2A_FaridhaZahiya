@@ -478,3 +478,355 @@ DEBUG - 2025-10-04 10:57:56 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-10-04 10:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-10-04 10:58:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-10-04 10:58:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 11:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 11:33:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 11:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 11:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 11:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 11:33:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 11:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-04 11:33:53 --> ErrorException: Undefined property: App\Controllers\Anggota::$anggotaModel
+[Method: GET, Route: anggota/tambahGaji]
+in APPPATH\Controllers\Anggota.php on line 135.
+ 1 APPPATH\Controllers\Anggota.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Anggota::$anggotaModel', 'C:\\xampp\\htdocs\\ETS_DPR\\app\\Controllers\\Anggota.php', 135)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Anggota->tambahGaji()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_DPR\\public\\index.php')
+DEBUG - 2025-10-04 11:41:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 11:42:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-04 11:42:32 --> CodeIgniter\Validation\Exceptions\ValidationException: "exists" is not a valid rule.
+[Method: POST, Route: anggota/saveGaji]
+in SYSTEMPATH\Validation\Validation.php on line 345.
+ 1 SYSTEMPATH\Validation\Validation.php(345): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('exists')
+ 2 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('id_anggota', 'id_anggota', '116', [...], [...], 'id_anggota')
+ 3 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\Anggota.php(156): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Anggota->saveGaji()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_DPR\\public\\index.php')
+DEBUG - 2025-10-04 11:44:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 11:45:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-04 11:45:01 --> CodeIgniter\Validation\Exceptions\ValidationException: "exists" is not a valid rule.
+[Method: POST, Route: anggota/saveGaji]
+in SYSTEMPATH\Validation\Validation.php on line 345.
+ 1 SYSTEMPATH\Validation\Validation.php(345): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('exists')
+ 2 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('id_anggota', 'id_anggota', '116', [...], [...], 'id_anggota')
+ 3 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\Anggota.php(161): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Anggota->saveGaji()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_DPR\\public\\index.php')
+DEBUG - 2025-10-04 11:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-04 11:50:05 --> CodeIgniter\Validation\Exceptions\ValidationException: "exists" is not a valid rule.
+[Method: POST, Route: anggota/saveGaji]
+in SYSTEMPATH\Validation\Validation.php on line 345.
+ 1 SYSTEMPATH\Validation\Validation.php(345): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('exists')
+ 2 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('id_anggota', 'id_anggota', '116', [...], [...], 'id_anggota')
+ 3 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\Anggota.php(156): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Anggota->saveGaji()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_DPR\\public\\index.php')
+DEBUG - 2025-10-04 11:50:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 11:50:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 11:50:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 11:50:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:01:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:01:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:06:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:06:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:06:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:07:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:07:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:08:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:22:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-04 12:23:35 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ko...', 0)
+#1 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ko...')
+#2 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ko...')
+#3 C:\xampp\htdocs\ETS_DPR\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ko...', Array, false)
+#4 C:\xampp\htdocs\ETS_DPR\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\ETS_DPR\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\ETS_DPR\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\ETS_DPR\app\Controllers\Anggota.php(169): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(933): App\Controllers\Anggota->saveKomponenGaji()
+#9 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+#10 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ETS_DPR\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ETS_DPR\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ETS_DPR\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\ETS_DPR\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+ERROR - 2025-10-04 12:23:35 --> Gagal menyimpan komponen gaji: Duplicate entry '0' for key 'PRIMARY'
+DEBUG - 2025-10-04 12:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:30:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:30:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-04 12:30:27 --> Error: Class "App\Models\GajiAnggotaModel" not found
+[Method: GET, Route: anggota]
+in APPPATH\Controllers\Anggota.php on line 20.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Anggota->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_DPR\\public\\index.php')
+DEBUG - 2025-10-04 12:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:31:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:31:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:31:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:31:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-04 12:31:42 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ko...', 0)
+#1 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ko...')
+#2 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ko...')
+#3 C:\xampp\htdocs\ETS_DPR\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ko...', Array, false)
+#4 C:\xampp\htdocs\ETS_DPR\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\ETS_DPR\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\ETS_DPR\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\ETS_DPR\app\Controllers\Anggota.php(169): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(933): App\Controllers\Anggota->saveKomponenGaji()
+#9 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+#10 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ETS_DPR\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ETS_DPR\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ETS_DPR\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\ETS_DPR\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+ERROR - 2025-10-04 12:31:42 --> Gagal menyimpan komponen gaji: Duplicate entry '0' for key 'PRIMARY'
+DEBUG - 2025-10-04 12:31:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:33:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:33:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-04 12:34:00 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ko...', 0)
+#1 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ko...')
+#2 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ko...')
+#3 C:\xampp\htdocs\ETS_DPR\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ko...', Array, false)
+#4 C:\xampp\htdocs\ETS_DPR\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\ETS_DPR\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\ETS_DPR\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\ETS_DPR\app\Controllers\Anggota.php(171): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(933): App\Controllers\Anggota->saveKomponenGaji()
+#9 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+#10 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ETS_DPR\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ETS_DPR\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ETS_DPR\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\ETS_DPR\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+ERROR - 2025-10-04 12:34:00 --> Gagal menyimpan komponen gaji: Duplicate entry '0' for key 'PRIMARY'
+DEBUG - 2025-10-04 12:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:35:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:35:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:35:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:40:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:40:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:43:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:43:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:43:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:44:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-04 12:44:10 --> mysqli_sql_exception: Duplicate entry '227' for key 'PRIMARY' in C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ko...', 0)
+#1 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ko...')
+#2 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ko...')
+#3 C:\xampp\htdocs\ETS_DPR\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ko...', Array, false)
+#4 C:\xampp\htdocs\ETS_DPR\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\ETS_DPR\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\ETS_DPR\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\ETS_DPR\app\Controllers\Anggota.php(171): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(933): App\Controllers\Anggota->saveKomponenGaji()
+#9 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+#10 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ETS_DPR\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ETS_DPR\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ETS_DPR\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\ETS_DPR\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+ERROR - 2025-10-04 12:44:10 --> Gagal menyimpan komponen gaji: Duplicate entry '227' for key 'PRIMARY'
+DEBUG - 2025-10-04 12:44:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:47:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:47:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:49:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:49:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:49:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:49:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:49:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:50:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-04 12:50:06 --> mysqli_sql_exception: Duplicate entry '227' for key 'PRIMARY' in C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ko...', 0)
+#1 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ko...')
+#2 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ko...')
+#3 C:\xampp\htdocs\ETS_DPR\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ko...', Array, false)
+#4 C:\xampp\htdocs\ETS_DPR\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\ETS_DPR\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\ETS_DPR\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\ETS_DPR\app\Controllers\Anggota.php(171): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(933): App\Controllers\Anggota->saveKomponenGaji()
+#9 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+#10 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ETS_DPR\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ETS_DPR\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ETS_DPR\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\ETS_DPR\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+ERROR - 2025-10-04 12:50:06 --> Gagal menyimpan komponen gaji: Duplicate entry '227' for key 'PRIMARY'
+DEBUG - 2025-10-04 12:50:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:52:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:52:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:52:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:52:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:52:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:52:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:53:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:53:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:54:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:54:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:54:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:55:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 12:55:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:00:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-04 13:00:44 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ko...', 0)
+#1 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ko...')
+#2 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ko...')
+#3 C:\xampp\htdocs\ETS_DPR\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ko...', Array, false)
+#4 C:\xampp\htdocs\ETS_DPR\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\ETS_DPR\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\ETS_DPR\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\ETS_DPR\app\Controllers\Anggota.php(171): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(933): App\Controllers\Anggota->saveKomponenGaji()
+#9 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+#10 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ETS_DPR\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ETS_DPR\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ETS_DPR\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\ETS_DPR\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+ERROR - 2025-10-04 13:00:44 --> Gagal menyimpan komponen gaji: Duplicate entry '0' for key 'PRIMARY'
+DEBUG - 2025-10-04 13:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:06:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:06:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:06:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-04 13:07:21 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ETS_DPR\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ko...', 0)
+#1 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ko...')
+#2 C:\xampp\htdocs\ETS_DPR\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ko...')
+#3 C:\xampp\htdocs\ETS_DPR\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ko...', Array, false)
+#4 C:\xampp\htdocs\ETS_DPR\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\ETS_DPR\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\ETS_DPR\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\ETS_DPR\app\Controllers\Anggota.php(169): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(933): App\Controllers\Anggota->saveKomponenGaji()
+#9 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+#10 C:\xampp\htdocs\ETS_DPR\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ETS_DPR\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ETS_DPR\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ETS_DPR\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\ETS_DPR\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+ERROR - 2025-10-04 13:07:21 --> Gagal menyimpan komponen gaji: Duplicate entry '0' for key 'PRIMARY'
+DEBUG - 2025-10-04 13:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:09:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:09:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:09:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:09:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:09:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:10:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:10:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:13:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:13:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:13:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:14:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:14:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:14:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:14:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:14:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:19:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:19:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:19:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:19:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:19:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:21:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-04 13:21:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
