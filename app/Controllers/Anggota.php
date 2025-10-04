@@ -383,5 +383,28 @@ class Anggota extends Controller
         }
     }
 
+    public function deletePenggajian($idAnggota, $idKomponenGaji)
+    {
+        log_message('debug', "Coba hapus data penggajian: Anggota=$idAnggota, Komponen=$idKomponenGaji");
+
+        try {
+            $this->db->table('penggajian')
+                ->where('id_anggota', $idAnggota)
+                ->where('id_komponen_gaji', $idKomponenGaji)
+                ->delete();
+
+            if ($this->db->affectedRows() > 0) {
+                log_message('debug', "Data penggajian berhasil dihapus");
+                return redirect()->to('/anggota/lihatPenggajian')->with('success', 'Data penggajian berhasil dihapus');
+            } else {
+                log_message('debug', "Tidak ada baris yang terhapus (id_anggota=$idAnggota, id_komponen_gaji=$idKomponenGaji)");
+                return redirect()->to('/anggota/lihatPenggajian')->with('error', 'Data penggajian tidak ditemukan');
+            }
+        } catch (\Exception $e) {
+            log_message('error', 'Gagal menghapus data penggajian: ' . $e->getMessage());
+            return redirect()->to('/anggota/lihatPenggajian')->with('error', 'Terjadi kesalahan saat menghapus data.');
+        }
+    }
+
 
 }

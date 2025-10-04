@@ -40,6 +40,11 @@
                             <td><?= number_format($p['take_home_pay'], 2) ?></td>
                             <td>
                                 <a href="/anggota/editPenggajian/<?= $p['id_anggota'] ?>/<?= $p['id_komponen_gaji'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="/anggota/deletePenggajian/<?= $p['id_anggota'] ?>/<?= $p['id_komponen_gaji'] ?>" method="post" style="display:inline-block;" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
+                                    <?= csrf_field() ?>
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                </form>
                             </td>
                         </tr>
                     <?php endforeach; ?>
