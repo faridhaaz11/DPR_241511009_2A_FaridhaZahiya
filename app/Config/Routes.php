@@ -12,3 +12,6 @@ $routes->post('/auth/attemptLogin', 'Auth::attemptLogin');
 $routes->get('/logout', 'Auth::logout');
 $routes->get('/admin/dashboard', 'Admin\Dashboard::index');
 $routes->get('/public/dashboard', 'Public\Dashboard::index');
+$routes->get('anggota', 'Anggota::index');
+$routes->get('anggota/tambah', 'Anggota::tambah'); 
+$routes->post('anggota/save', 'Anggota::save');
