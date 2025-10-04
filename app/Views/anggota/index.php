@@ -21,12 +21,13 @@
                     <th>Jabatan</th>
                     <th>Status Pernikahan</th>
                     <th>Jumlah Anak</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 <?php if (empty($anggota)): ?>
                     <tr>
-                        <td colspan="8" class="text-center">Tidak ada data anggota.</td>
+                        <td colspan="9" class="text-center">Tidak ada data anggota.</td>
                     </tr>
                 <?php else: ?>
                     <?php foreach ($anggota as $a): ?>
@@ -39,6 +40,9 @@
                             <td><?= $a['jabatan'] ?></td>
                             <td><?= $a['status_pernikahan'] ?></td>
                             <td><?= $a['jumlah_anak'] ?? 0 ?></td>
+                            <td>
+                                <a href="/anggota/edit/<?= $a['id_anggota'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>

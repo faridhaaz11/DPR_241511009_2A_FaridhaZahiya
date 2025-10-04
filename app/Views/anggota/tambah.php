@@ -48,6 +48,8 @@
                 <select name="status_pernikahan" id="status_pernikahan" class="form-select" required>
                     <option value="Kawin" <?= set_select('status_pernikahan', 'Kawin') ?>>Kawin</option>
                     <option value="Belum Kawin" <?= set_select('status_pernikahan', 'Belum Kawin') ?>>Belum Kawin</option>
+                    <option value="Cerai Hidup" <?= set_select('status_pernikahan', 'Cerai Hidup') ?>>Cerai Hidup</option>
+                    <option value="Cerai Mati" <?= set_select('status_pernikahan', 'Cerai Mati') ?>>Cerai Mati</option>
                 </select>
             </div>
             <div class="mb-3">
