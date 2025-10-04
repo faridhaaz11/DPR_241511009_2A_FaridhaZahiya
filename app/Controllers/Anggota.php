@@ -21,6 +21,7 @@ class Anggota extends Controller
         $this->komponenGajiModel = new KomponenGajiModel();
         $this->gajiAnggotaModel = new GajiAnggotaModel();
         $this->penggajianModel = new PenggajianModel();
+        $this->db = \Config\Database::connect();
         helper(['form', 'url']);
 
         if (!$this->checkAuth()) {
@@ -264,7 +265,9 @@ class Anggota extends Controller
         }
         $jabatanKomponen = $komponen['jabatan'];
         if ($jabatanKomponen !== 'Semua' && $jabatanKomponen !== $jabatanAnggota) {
-            return redirect()->back()->withInput()->with('errors', ['id_komponen_gaji' => 'Komponen gaji tidak sesuai dengan jabatan anggota']);
+            return redirect()->back()->withInput()->with('errors', [
+                'id_komponen_gaji' => "Komponen gaji untuk jabatan {$jabatanKomponen} tidak bisa diberikan ke anggota dengan jabatan {$jabatanAnggota}"
+            ]);
         }
 
         // Validasi tidak boleh duplikat
@@ -288,5 +291,31 @@ class Anggota extends Controller
             return redirect()->back()->withInput()->with('errors', ['system' => 'Terjadi kesalahan saat menyimpan data. Cek log untuk detail.']);
         }
     }
+
+    public function lihatPenggajian()
+    {
+        $builder = $this->db->table('penggajian')
+                            ->join('anggota', 'anggota.id_anggota = penggajian.id_anggota')
+                            ->join('komponen_gaji', 'komponen_gaji.id_komponen_gaji = penggajian.id_komponen_gaji')
+                            ->select('penggajian.id_anggota, anggota.gelar_depan, anggota.nama_depan, anggota.nama_belakang, anggota.gelar_belakang, anggota.jabatan, komponen_gaji.nominal')
+                            ->groupBy('penggajian.id_anggota, anggota.gelar_depan, anggota.nama_depan, anggota.nama_belakang, anggota.gelar_belakang, anggota.jabatan');
+
+        $data['penggajian'] = $builder->get()->getResultArray();
+
+        // Hitung Take Home Pay sederhana (jumlah nominal komponen untuk setiap anggota)
+        foreach ($data['penggajian'] as &$row) {
+            $totalNominal = $this->db->table('penggajian')
+                                ->join('komponen_gaji', 'komponen_gaji.id_komponen_gaji = penggajian.id_komponen_gaji')
+                                ->where('penggajian.id_anggota', $row['id_anggota'])
+                                ->selectSum('komponen_gaji.nominal')
+                                ->get()
+                                ->getRow()
+                                ->nominal;
+            $row['take_home_pay'] = $totalNominal ?? 0;
+        }
+
+        return view('anggota/lihat_penggajian', $data);
+    }
+
 
 }

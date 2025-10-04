@@ -27,3 +27,6 @@ $routes->post('anggota/updateKomponenGaji/(:num)', 'Anggota::updateKomponenGaji/
 $routes->get('anggota/deleteKomponenGaji/(:num)', 'Anggota::deleteKomponenGaji/$1');
 $routes->get('anggota/tambahPenggajian', 'Anggota::tambahPenggajian');
 $routes->post('anggota/savePenggajian', 'Anggota::savePenggajian');
+$routes->get('anggota/lihatPenggajian', 'Anggota::lihatPenggajian');
+
+$routes->get('public/penggajian', 'PublicController::lihatPenggajianPublic');

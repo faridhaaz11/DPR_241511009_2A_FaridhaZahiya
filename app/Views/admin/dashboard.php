@@ -22,7 +22,7 @@
                 </a>
             </div>
             <div class="col-md-4 mb-3">
-                <a href="/anggota/tambahPenggajian" class="btn btn-primary btn-lg w-100" style="background-color: #003366; border-color: #003366;">
+                <a href="/anggota/lihatPenggajian" class="btn btn-primary btn-lg w-100" style="background-color: #003366; border-color: #003366;">
                     Kelola Data Penggajian
                 </a>
             </div>

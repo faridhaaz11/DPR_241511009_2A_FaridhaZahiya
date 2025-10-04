@@ -22,7 +22,7 @@
             <tbody>
                 <?php if (empty($anggota)): ?>
                     <tr>
-                        <td colspan="4" class="text-center">Tidak ada data anggota.</td>
+                        <td colspan="8" class="text-center">Tidak ada data anggota.</td>
                     </tr>
                 <?php else: ?>
                     <?php foreach ($anggota as $a): ?>

@@ -66,11 +66,11 @@
                     <h5 class="fw-bold">Menu Admin</h5>
                     <a href="/anggota" class="btn" style="background-color: #003366; border-color: #003366;">Data Anggota DPR</a>
                     <a href="/anggota/lihatKomponenGaji" class="btn" style="background-color: #003366; border-color: #003366;">Data Komponen Gaji</a>
-                    <a href="/penggajian" class="btn" style="background-color: #003366; border-color: #003366;">Data Penggajian</a>
+                    <a href="/anggota/lihatPenggajian" class="btn" style="background-color: #003366; border-color: #003366;">Data Penggajian</a>
                 <?php elseif (session()->get('role') == 'Public'): ?>
                     <h5 class="fw-bold">Menu Public</h5>
                     <a href="/data-anggota" class="btn" style="background-color: #003366; border-color: #003366;">Data Anggota DPR</a>
-                    <a href="/penggajian" class="btn" style="background-color: #003366; border-color: #003366;">Data Penggajian</a>
+                    <a href="/public/penggajian" class="btn" style="background-color: #003366; border-color: #003366;">Data Penggajian</a>
                 <?php endif; ?>
             </div>
             <div class="col-md-10 content">

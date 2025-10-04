@@ -17,7 +17,7 @@
                 </a>
             </div>
             <div class="col-md-6 mb-3">
-                <a href="/penggajian" class="btn btn-lg w-100 text-white dashboard-btn" style="background-color: #003366; border-color: #003366;">
+                <a href="/public/penggajian" class="btn btn-lg w-100 text-white dashboard-btn" style="background-color: #003366; border-color: #003366;">
                     Lihat Data Penggajian
                 </a>
             </div>
