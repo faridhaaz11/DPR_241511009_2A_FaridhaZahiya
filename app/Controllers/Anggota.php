@@ -119,4 +119,15 @@ class Anggota extends Controller
         }
     }
 
+    public function delete($id)
+    {
+        try {
+            $this->model->delete($id);
+            return redirect()->to('/anggota')->with('success', 'Data anggota berhasil dihapus');
+        } catch (\Exception $e) {
+            log_message('error', 'Gagal menghapus data: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat menghapus data. Cek log untuk detail.');
+        }
+    }
+
 }

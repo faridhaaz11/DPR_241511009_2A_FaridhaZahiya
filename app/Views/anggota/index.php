@@ -10,6 +10,9 @@
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
         <?php endif; ?>
+        <?php if (session()->getFlashdata('error')): ?>
+            <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+        <?php endif; ?>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -42,6 +45,7 @@
                             <td><?= $a['jumlah_anak'] ?? 0 ?></td>
                             <td>
                                 <a href="/anggota/edit/<?= $a['id_anggota'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="/anggota/delete/<?= $a['id_anggota'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
