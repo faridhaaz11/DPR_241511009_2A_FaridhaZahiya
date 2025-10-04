@@ -38,6 +38,7 @@
                             <td><?= $k['satuan'] ?></td>
                             <td>
                                 <a href="/anggota/editKomponenGaji/<?= $k['id_komponen_gaji'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="/anggota/deleteKomponenGaji/<?= $k['id_komponen_gaji'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

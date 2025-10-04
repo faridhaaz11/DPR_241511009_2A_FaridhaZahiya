@@ -223,4 +223,15 @@ class Anggota extends Controller
         }
     }
 
+    public function deleteKomponenGaji($id)
+    {
+        try {
+            $this->komponenGajiModel->delete($id);
+            return redirect()->to('/anggota/lihatKomponenGaji')->with('success', 'Komponen gaji berhasil dihapus');
+        } catch (\Exception $e) {
+            log_message('error', 'Gagal menghapus komponen gaji: ' . $e->getMessage());
+            return redirect()->to('/anggota/lihatKomponenGaji')->with('error', 'Terjadi kesalahan saat menghapus data. Cek log untuk detail.');
+        }
+    }
+
 }
