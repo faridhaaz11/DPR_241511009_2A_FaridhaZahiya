@@ -12,7 +12,7 @@
         <p>Selamat datang di dashboard public. Anda dapat melihat data Anngota DPR:</p>
         <div class="row mt-4">
             <div class="col-md-6 mb-3">
-                <a href="/anggota" class="btn btn-lg w-100 text-white dashboard-btn" style="background-color: #003366; border-color: #003366;">
+                <a href="/data-anggota" class="btn btn-lg w-100 text-white dashboard-btn" style="background-color: #003366; border-color: #003366;">
                     Lihat Data Anggota DPR
                 </a>
             </div>

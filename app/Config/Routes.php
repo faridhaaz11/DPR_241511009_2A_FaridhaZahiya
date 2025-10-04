@@ -15,3 +15,4 @@ $routes->get('/public/dashboard', 'Public\Dashboard::index');
 $routes->get('anggota', 'Anggota::index');
 $routes->get('anggota/tambah', 'Anggota::tambah'); 
 $routes->post('anggota/save', 'Anggota::save');
+$routes->get('data-anggota', 'PublicController::anggota');

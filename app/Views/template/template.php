@@ -69,7 +69,7 @@
                     <a href="/penggajian" class="btn" style="background-color: #003366; border-color: #003366;">Data Penggajian</a>
                 <?php elseif (session()->get('role') == 'Public'): ?>
                     <h5 class="fw-bold">Menu Public</h5>
-                    <a href="/anggota" class="btn" style="background-color: #003366; border-color: #003366;">Data Anggota DPR</a>
+                    <a href="/data-anggota" class="btn" style="background-color: #003366; border-color: #003366;">Data Anggota DPR</a>
                     <a href="/penggajian" class="btn" style="background-color: #003366; border-color: #003366;">Data Penggajian</a>
                 <?php endif; ?>
             </div>
