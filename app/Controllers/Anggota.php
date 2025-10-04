@@ -176,4 +176,10 @@ class Anggota extends Controller
         }
     }
 
+    public function lihatKomponenGaji()
+    {
+        $data['komponen'] = $this->komponenGajiModel->findAll();
+        return view('anggota/lihat_komponen_gaji', $data);
+    }
+
 }
